@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Selected Type">
+  <div class='slds-grid boxcolor'>
+    <div class="slds-size_1-of-2">
+            <template if:true={typePicklistValues.data}>
+                <lightning-combobox name="type"
+                value={selectedValue}
+                placeholder="All Types"
+                options={typePicklistValues.data.values}
+                onchange={performBusinessLogic} >
+                </lightning-combobox>
+            </template>
+    </div>
+    <!--<p>selected Value is :{selectedValue}</p>-->
+    <div class="slds-size_1-of-2 slds-p-top_large">
+    <lightning-button label="Search" type="search" onclick={handleAccountType} variant='brand' style="margin-left:1rem;margin-top:-0.25rem;"></lightning-button>
+    </div>   
+ </div>
+</lightning-card>
+</template>

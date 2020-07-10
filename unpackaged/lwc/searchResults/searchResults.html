@@ -1,0 +1,10 @@
+<template>
+    <template if:true={accList.data}>
+        <template for:each={accList.data} for:item='account'>
+                   <c-card-component account={account} key={account.Id}></c-card-component>
+        </template>
+    </template>
+    <template if:true={accList.error}>
+        <p>{accList.error}</p>
+    </template>
+    </template>

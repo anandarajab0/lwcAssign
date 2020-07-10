@@ -1,0 +1,38 @@
+<template>
+
+    <template if:true={recordEdit}>
+    <lightning-card title="Account Edit">
+            
+                    <lightning-record-form
+                        record-id={details}
+                        object-api-name="Account"
+                        onsuccess = {handleAccountEdit}
+                        onsubmit = {handleSubmit}
+                        oncancel = {handleSubmit}
+                        fields={selectedFields}
+                        columns="2"
+                        mode="view">
+                    </lightning-record-form> 
+                    </lightning-card>
+                </template>
+                <template if:true={recordView}>
+                    <lightning-card title="Account View">
+                    <button onclick={editRec} style="background-color:rgb(158, 160, 20);color:beige;margin-left:10rem;">Edit</button>
+                    <lightning-record-view-form record-id={details} object-api-name="Account">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-output-field field-name="Name"></lightning-output-field>
+                                <lightning-output-field field-name="Website"></lightning-output-field>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-output-field field-name="Industry"></lightning-output-field>
+                                <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+                                <lightning-output-field field-name="Phone"></lightning-output-field>
+                                <lightning-output-field field-name="Type"></lightning-output-field>
+                            </div>
+                        </div>
+                    </lightning-record-view-form>
+                </lightning-card>
+                </template> 
+    
+</template>
